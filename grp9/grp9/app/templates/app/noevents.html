@@ -1,0 +1,16 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Registered Events{% endblock title %}
+{% block main-content %}
+<div class="container my-5">
+    <div class="row">
+        <h3 class="text-center">
+            You not registered for any upcoming Events.<br>
+            Visit our home page to find Events that might interest you.
+        </h3>
+        <div class="text-center">
+            <img src="{% static 'app/images/blank.gif' %}" alt="" class="img-fluid img-thumbnail w-25">
+        </div>
+    </div>
+</div>
+{% endblock main-content %}

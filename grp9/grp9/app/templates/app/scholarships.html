@@ -1,0 +1,24 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Scholarships{% endblock title %}
+{% block main-content %}
+<div class="mx-4 my-4">
+  <h3 class="display-5">  <strong>Scholarships near you</strong></h3>
+</div>
+</div>
+  <div class="col-sm">
+   <div class="row">
+    {% for product in Scholarships %}
+     <div class="col-sm-4 text-center mb-4">
+       <a href="{% url 'event-detail' product.id %}" class="btn">
+        <div class = "item">
+          <img src="{{product.product_image.url}}" height="300" width = "400">
+          <div class="fw-bold">{{product.title}}</div>
+          <div>{{product.mini_description}}</div>
+        </div>
+      </a>
+     </div>
+    {% endfor %}
+   </div>
+  </div>
+{% endblock main-content %}

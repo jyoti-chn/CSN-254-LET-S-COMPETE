@@ -1,0 +1,64 @@
+{% extends 'app/base.html' %}
+{% load static %}
+{% block title %}Home{% endblock title %}
+
+{% block slideshow %}
+ <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'app/images/cokke.jpeg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/engage.jpeg' %}" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'app/images/tips.jpeg' %}" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </a>
+</div>
+{% endblock slideshow %}
+
+{% block main-content %}
+<div class="m-3">
+    <h2>Scholorship</h2>
+ <div class="owl-carousel" id="slider1">
+     {% for b in Scholarships %}
+  <a href="{% url 'event-detail' b.id %}" class="btn"><div class="item"><img src={{b.product_image.url}} alt="" height="200px"><span class="fw-bold">{{b.title}}</span><br></div></a>
+     {% endfor %}
+ </div>
+    <h2>Hackathons</h2>
+ <div class="owl-carousel" id="slider1">
+     {% for b in Hackathons %}
+  <a href="{% url 'event-detail' b.id %}" class="btn"><div class="item"><img src={{b.product_image.url}} alt="" height="200px"><span class="fw-bold">{{b.title}}</span><br></div></a>
+     {% endfor %}
+ </div>
+    <h2>Courses</h2>
+ <div class="owl-carousel" id="slider1">
+     {% for b in Courses %}
+  <a href="{% url 'event-detail' b.id %}" class="btn"><div class="item"><img src={{b.product_image.url}} alt="" height="200px"><span class="fw-bold">{{b.title}}</span><br></div></a>
+     {% endfor %}
+ </div>
+     <h2>Internships</h2>
+ <div class="owl-carousel" id="slider1">
+     {% for b in Internships %}
+  <a href="{% url 'event-detail' b.id %}" class="btn"><div class="item"><img src={{b.product_image.url}} alt="" height="200px"><span class="fw-bold">{{b.title}}</span><br></div></a>
+     {% endfor %}
+ </div>
+     <h2>Cultural Events</h2>
+ <div class="owl-carousel" id="slider1">
+     {% for b in CulEvents %}
+  <a href="{% url 'event-detail' b.id %}" class="btn"><div class="item"><img src={{b.product_image.url}} alt="" height="200px"><span class="fw-bold">{{b.title}}</span><br></div></a>
+     {% endfor %}
+ </div>
+</div>
+
+{% endblock main-content %}
+
